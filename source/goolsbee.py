@@ -2,22 +2,9 @@
 """not stupid"""
 import random
 from typing import List
+import string
 
 import praw
-
-
-def clean_text(text: str) -> str:
-    """clean text to remove punctuation"""
-    punc_list: List[str] = [".", ";", ":", "!", "?", "/", "\\", ",",
-                            "#", "@", "$", "&", ")", "(", "'", ">", "[", "]"]
-    new_s: str = ''
-    for i in text:
-        if i not in punc_list:
-            new_s += i
-        else:
-            new_s += ' '
-    return new_s.lower()
-
 
 class Goolsbot(object):
     """goolsbot class"""
@@ -31,9 +18,10 @@ class Goolsbot(object):
 
     def run(self: Goolsbot) -> None:
         """run the main code"""
+        punc_remover = str.maketrans('', '', string.punctuation)
         for comment in self.reddit.subreddit('neoliberal').stream.comments():
             if not comment.author == self.reddit.user.me():
-                text: List[str] = clean_text(comment.body).split()
+                text: List[str] = str(comment.body).translate(punc_remover).lower().split()
                 if str(comment) not in self.commented:
 
                     if 'bitcoin' in text:
