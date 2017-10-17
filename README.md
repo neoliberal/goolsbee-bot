@@ -1,0 +1,2 @@
+# goolsbee-bot
+(not) stupid
