@@ -1,10 +1,13 @@
 #!/usr/bin/python3.6
 """not stupid"""
+import json
 import random
-from typing import List
+from typing import List, Dict, Any
 import string
 
 import praw
+
+from .response import Response
 
 class Goolsbot(object):
     """goolsbot class"""
@@ -13,6 +16,12 @@ class Goolsbot(object):
         """initialize"""
         self.reddit: praw.Reddit = praw.Reddit('Goolsbee')
         self.commented: List[str] = open("replied_comments.txt").read().split()
+        with open("data/responses.json") as responses_file:
+            res_list: List[Dict[str, Any]] = json.loads(responses_file.read())["responses"]
+            self.responses: List[Response] = [
+                Response(item["image"], item["text"], item["triggers"]) for item in res_list
+                ]
+
         while True:
             self.run()
 
