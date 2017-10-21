@@ -30,10 +30,8 @@ class Goolsbot(object):
         punc_remover = str.maketrans('', '', string.punctuation)
         for comment in self.reddit.subreddit('neoliberal').stream.comments():
             if not comment.author == self.reddit.user.me():
-                # roll the dice, currently 5% of goolsbot posting
-                chance: bool = random.randint(1, 21) == 1
                 text: List[str] = str(comment.body).translate(punc_remover).lower().split()
-                if str(comment) not in self.commented and chance:
+                if str(comment) not in self.commented:
                     combos: Optional[List[Response]] = [
                         response for response in self.responses for
                         word in text if word in response.triggers
@@ -50,8 +48,13 @@ class Goolsbot(object):
             file.write(str(comment))
             file.write(' ')
 
+        if random.randint(1, 21) == 1:
+            print("Comment passed")
+            return
+
         comment.reply(str(response))
-        print('Comment written')
+        print("Comment written")
+        return
 
 if __name__ == '__main__':
     Goolsbot()
