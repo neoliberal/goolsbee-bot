@@ -41,6 +41,7 @@ class Goolsbot(object):
                         self.write_comment(
                             random.choice(self.responses), comment)
 
+    # pylint: disable=R0201
     def write_comment(self: Goolsbot, response: Response, comment: praw.models.Comment) -> None:
         """log comment and writes to file"""
         with open('replied_comments.txt', 'a') as file:
@@ -54,6 +55,7 @@ class Goolsbot(object):
         comment.reply(str(response))
         print("Comment written")
         return
+
 
 if __name__ == '__main__':
     bot: Goolsbot = Goolsbot()
