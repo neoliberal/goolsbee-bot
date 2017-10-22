@@ -9,11 +9,11 @@ import praw
 
 from .response import Response
 
+
 class Goolsbot(object):
     """goolsbot class"""
 
     def __init__(self: Goolsbot) -> None:
-        """initialize"""
         self.reddit: praw.Reddit = praw.Reddit('Goolsbee')
         self.commented: List[str] = open("replied_comments.txt").read().split()
         with open("data/responses.json") as responses_file:
@@ -30,8 +30,8 @@ class Goolsbot(object):
         punc_remover = str.maketrans('', '', string.punctuation)
         for comment in self.reddit.subreddit('neoliberal').stream.comments():
             if not comment.author == self.reddit.user.me():
-                text: List[str] = str(comment.body).translate(punc_remover).lower().split()
                 if str(comment) not in self.commented:
+                    text: List[str] = str(comment.body).translate(punc_remover).lower().split()
                     combos: Optional[List[Response]] = [
                         response for response in self.responses for
                         word in text if word in response.triggers
