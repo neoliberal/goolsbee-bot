@@ -36,7 +36,7 @@ class Goolsbot(object):
                         for word in text
                         if word in response.triggers
                     ]
-                    if combos:
+                    if combos is not None:
                         self.write_comment(random.choice(combos), comment)
                     elif 'goolsbee' in text:
                         self.write_comment(
