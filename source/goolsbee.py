@@ -33,8 +33,7 @@ class Goolsbot(object):
                     text: List[str] = str(comment.body).translate(self.punc_remover).lower().split()
                     combos: Optional[List[Response]] = [
                         response for response in self.responses
-                        for word in text
-                        if word in response.triggers
+                        if all(word in text for word in response.triggers)
                     ]
                     if combos is not None:
                         self.write_comment(random.choice(combos), comment)
