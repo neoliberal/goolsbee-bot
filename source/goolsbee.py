@@ -24,16 +24,17 @@ class Goolsbot(object):
                 Response(item["image"], item["text"], item["triggers"]) for item in res_list
             ]
 
+    punc_remover = str.maketrans('', '', string.punctuation)
     def run(self: Goolsbot) -> None:
         """run the main code"""
-        punc_remover = str.maketrans('', '', string.punctuation)
         for comment in self.reddit.subreddit('neoliberal').stream.comments():
             if not comment.author == self.reddit.user.me():
                 if str(comment) not in self.commented:
-                    text: List[str] = str(comment.body).translate(punc_remover).lower().split()
+                    text: List[str] = str(comment.body).translate(self.punc_remover).lower().split()
                     combos: Optional[List[Response]] = [
-                        response for response in self.responses for
-                        word in text if word in response.triggers
+                        response for response in self.responses
+                        for word in text
+                        if word in response.triggers
                     ]
                     if combos:
                         self.write_comment(random.choice(combos), comment)
@@ -49,10 +50,10 @@ class Goolsbot(object):
             file.write(' ')
 
         if random.randint(1, 21) == 1:
+            comment.reply(str(response))
             print("Comment passed")
             return
 
-        comment.reply(str(response))
         print("Comment written")
         return
 
