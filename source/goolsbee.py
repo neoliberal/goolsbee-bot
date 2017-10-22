@@ -24,9 +24,6 @@ class Goolsbot(object):
                 Response(item["image"], item["text"], item["triggers"]) for item in res_list
             ]
 
-        while True:
-            self.run()
-
     def run(self: Goolsbot) -> None:
         """run the main code"""
         punc_remover = str.maketrans('', '', string.punctuation)
@@ -59,4 +56,6 @@ class Goolsbot(object):
         return
 
 if __name__ == '__main__':
-    Goolsbot()
+    bot: Goolsbot = Goolsbot()
+    while True:
+        bot.run()
