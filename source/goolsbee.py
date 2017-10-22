@@ -15,9 +15,11 @@ class Goolsbot(object):
 
     def __init__(self: Goolsbot) -> None:
         self.reddit: praw.Reddit = praw.Reddit('Goolsbee')
-        self.commented: List[str] = open("replied_comments.txt").read().split()
-        with open("data/responses.json") as responses_file:
-            res_list: List[Dict[str, Any]] = json.loads(responses_file.read())["responses"]
+        with open("replied_comments.txt") as replied:
+            self.commented: List[str] = replied.read().split()
+
+        with open("data/responses.json") as responses:
+            res_list: List[Dict[str, Any]] = json.loads(responses.read())["responses"]
             self.responses: List[Response] = [
                 Response(item["image"], item["text"], item["triggers"]) for item in res_list
             ]
