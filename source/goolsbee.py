@@ -13,8 +13,8 @@ from .response import Response
 class Goolsbot(object):
     """goolsbot class"""
 
-    def __init__(self: Goolsbot) -> None:
-        self.reddit: praw.Reddit = praw.Reddit('Goolsbee')
+    def __init__(self: Goolsbot, reddit: praw.Reddit) -> None:
+        self.reddit: praw.Reddit = reddit
         with open("replied_comments.txt") as replied:
             self.commented: List[str] = replied.read().split()
 
@@ -58,6 +58,6 @@ class Goolsbot(object):
 
 
 if __name__ == '__main__':
-    bot: Goolsbot = Goolsbot()
+    bot: Goolsbot = Goolsbot(praw.Reddit("Goolsbee"))
     while True:
         bot.run()
