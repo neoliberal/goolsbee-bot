@@ -13,8 +13,9 @@ from .response import Response
 class Goolsbot(object):
     """goolsbot class"""
 
-    def __init__(self: Goolsbot, reddit: praw.Reddit) -> None:
+    def __init__(self: Goolsbot, reddit: praw.Reddit, subreddits: List[str]) -> None:
         self.reddit: praw.Reddit = reddit
+        self.subreddits: List[str] = subreddits
         with open("replied_comments.txt") as replied:
             self.commented: List[str] = replied.read().split()
 
@@ -27,19 +28,27 @@ class Goolsbot(object):
     punc_remover = str.maketrans('', '', string.punctuation)
     def run(self: Goolsbot) -> None:
         """run the main code"""
-        for comment in self.reddit.subreddit('neoliberal').stream.comments():
-            if not comment.author == self.reddit.user.me():
-                if str(comment) not in self.commented:
-                    text: List[str] = str(comment.body).translate(self.punc_remover).lower().split()
-                    combos: List[Response] = [
-                        response for response in self.responses
-                        if response.has_words(text)
-                    ]
-                    if combos:
-                        self.write_comment(random.choice(combos), comment)
-                    elif 'goolsbee' in text:
-                        self.write_comment(
-                            random.choice(self.responses), comment)
+        for subreddit in self.subreddits:
+            validated: praw.models.Subreddit = self.reddit.subreddit()
+            try:
+                validated = self.reddit.subreddit(subreddit)
+            except praw.exceptions.APIException as praw_error:
+                print(praw_error)
+                continue
+
+            for comment in validated.stream.comments():
+                if not comment.author == self.reddit.user.me():
+                    if str(comment) not in self.commented:
+                        text: List[str] = comment.body.translate(self.punc_remover).lower().split()
+                        combos: List[Response] = [
+                            response for response in self.responses
+                            if response.has_words(text)
+                        ]
+                        if combos:
+                            self.write_comment(random.choice(combos), comment)
+                        elif 'goolsbee' in text:
+                            self.write_comment(
+                                random.choice(self.responses), comment)
 
     # pylint: disable=R0201
     def write_comment(self: Goolsbot, response: Response, comment: praw.models.Comment) -> None:
@@ -62,6 +71,6 @@ class Goolsbot(object):
 
 
 if __name__ == '__main__':
-    bot: Goolsbot = Goolsbot(praw.Reddit("Goolsbee"))
+    bot: Goolsbot = Goolsbot(praw.Reddit("Goolsbee"), ["neoliberal"])
     while True:
         bot.run()
