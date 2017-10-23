@@ -49,7 +49,11 @@ class Goolsbot(object):
             file.write(' ')
 
         if random.randint(1, 21) == 1:
-            comment.reply(str(response))
+            try:
+                comment.reply(str(response))
+            except praw.exceptions.APIException as reddit_error:
+                print(reddit_error)
+                return
             print("Comment passed")
             return
 
