@@ -2,7 +2,7 @@
 """not stupid"""
 import json
 import random
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any
 import string
 
 import praw
@@ -31,11 +31,11 @@ class Goolsbot(object):
             if not comment.author == self.reddit.user.me():
                 if str(comment) not in self.commented:
                     text: List[str] = str(comment.body).translate(self.punc_remover).lower().split()
-                    combos: Optional[List[Response]] = [
+                    combos: List[Response] = [
                         response for response in self.responses
                         if response.has_words(text)
                     ]
-                    if combos is not None:
+                    if combos:
                         self.write_comment(random.choice(combos), comment)
                     elif 'goolsbee' in text:
                         self.write_comment(
