@@ -12,8 +12,8 @@ class Response(object):
 
     def __str__(self: Response) -> str:
         """returns formatted link"""
-        return "[{1}]({2})".format(self.text, self.image)
+        return f"[{self.text}]({self.image})"
 
     def has_words(self: Response, words: List[str]) -> bool:
         """check if all words are found in trigger"""
-        return any((x for x in self.triggers if x in words))
+        return any((trigger for trigger in self.triggers if trigger in words))

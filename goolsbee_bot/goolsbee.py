@@ -3,7 +3,6 @@
 import json
 import random
 from typing import List, Dict, Any
-import string
 
 import praw
 
@@ -24,7 +23,9 @@ class Goolsbot(object):
             self.responses: List[Response] = [
                 Response(item["image"], item["text"], item["triggers"]) for item in res_list
             ]
+        return
 
+    import string
     punc_remover = str.maketrans('', '', string.punctuation)
     def run(self: Goolsbot) -> None:
         """run the main code"""
