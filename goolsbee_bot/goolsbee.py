@@ -56,13 +56,14 @@ class Goolsbot(object):
                             if response.has_words(text)
                         ]
                         if combos:
+                            self.logger.debug("Match detected")
                             self.write_comment(random.choice(combos), comment)
                         elif "goolsbee" in text:
+                            self.logger.debug("\"Goolsbee\" detected")
                             self.write_comment(
                                 random.choice(self.responses), comment
                             )
 
-    # pylint: disable=R0201
     def write_comment(self: Goolsbot, response: Response, comment: praw.models.Comment) -> None:
         """log comment and writes to file"""
         with open('replied_comments.txt', 'a') as file:
@@ -70,17 +71,15 @@ class Goolsbot(object):
             file.write(' ')
 
         if random.randint(1, 21) == 1:
+            self.logger.debug("Comment lucky, posting")
             try:
                 comment.reply(str(response))
-            except praw.exceptions.APIException as reddit_error:
-                print(reddit_error)
-                return
-            print("Comment passed")
-            return
-
-        print("Comment written")
-        return
-
+            except praw.exceptions.APIException:
+                self.logger.exception()
+            else:
+                self.logger.debug("Comment posted")
+        else:
+            self.logger.debug("Comment not posted, unlucky")
 
 if __name__ == '__main__':
     bot: Goolsbot = Goolsbot(praw.Reddit("Goolsbee"), ["neoliberal"])
