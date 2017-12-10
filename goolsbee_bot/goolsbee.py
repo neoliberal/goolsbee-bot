@@ -32,11 +32,12 @@ class Goolsbot(object):
             self.commented: List[str] = replied.read().split()
 
         self.logger.debug("Opening responses")
-        with open("data/responses.json") as responses:
-            res_list: List[Dict[str, Any]] = json.loads(responses.read())
-            self.responses: List[Response] = [
-                Response(item["triggers"], item["table"]) for item in res_list
-            ]
+        import pkg_resources
+        data: bytes = pkg_resources.resource_string(__name__, "data/responses.json")
+        res_list: List[Dict[str, Any]] = json.loads(data)
+        self.responses: List[Response] = [
+            Response(item["triggers"], item["table"]) for item in res_list
+        ]
         self.logger.debug("Opened responses")
         self.logger.info("goolsbee-bot intialized successfully")
         return
