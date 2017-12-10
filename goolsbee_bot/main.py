@@ -25,22 +25,22 @@ def arguments() -> argparse.ArgumentParser:
         description="Goolsbee Bot"
     )
     parser.add_argument(
-        "subreddits", dest="subreddits", metavar='S', type=str, nargs='+', required=True,
+        "subreddits", metavar='S', type=str, nargs='+',
         help="Subreddits to browse"
     )
     parser.add_argument(
         "--client_id", dest="client_id", type=str, nargs='?',
-        default=environ["goolsbot_client_id"],
+        default=environ.get("goolsbot_client_id"),
         help="Client ID of reddit script"
     )
     parser.add_argument(
         "--client_secret", dest="client_secret", type=str, nargs='?',
-        default=environ["goolsbot_client_secret"],
+        default=environ.get("goolsbot_client_secret"),
         help="Client secret of reddit script"
     )
     parser.add_argument(
         "--refresh_token", dest="refresh_token", type=str, nargs='?',
-        default=environ["goolsbee_refresh_token"],
+        default=environ.get("goolsbee_refresh_token"),
         help="Refresh token of reddit script"
     )
     return parser

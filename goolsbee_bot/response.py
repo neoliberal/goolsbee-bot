@@ -35,6 +35,6 @@ class Response(object):
             numalign="left"
         )
 
-    def has_words(self: Response, words: List[str]) -> bool:
+    def has_words(self, words: List[str]) -> bool:
         """check if all words are found in trigger"""
         return any((trigger for trigger in self.triggers if trigger in words))
