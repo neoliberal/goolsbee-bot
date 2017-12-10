@@ -7,7 +7,7 @@ from typing import List, Dict, Any
 import praw
 from slack_python_logging import slack_logger
 
-from .response import Response
+from response import Response
 
 class Goolsbot(object):
     """goolsbot class"""
@@ -36,7 +36,7 @@ class Goolsbot(object):
         with open("data/responses.json") as responses:
             res_list: List[Dict[str, Any]] = json.loads(responses.read())
             self.responses: List[Response] = [
-                Response(item["image"], item["text"], item["triggers"]) for item in res_list
+                Response(item["triggers"], item["table"]) for item in res_list
             ]
         self.logger.debug("Opened responses")
         self.logger.info("goolsbee-bot intialized successfully")
