@@ -7,11 +7,11 @@ from tabulate import tabulate
 class Response(object):
     """hold response data"""
 
-    def __init__(self: Response, triggers: List[str], table: Dict[str, str]) -> None:
+    def __init__(self, triggers: List[str], table: Dict[str, str]) -> None:
         self.triggers: List[str] = triggers
         self.table: Dict[str, Any] = table
 
-    def __str__(self: Response) -> str:
+    def __str__(self) -> str:
         """returns formatted table"""
         def vote(level: int) -> str:
             """converts voting number into string"""

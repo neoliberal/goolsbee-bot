@@ -1,4 +1,3 @@
-#!/usr/bin/python3.6
 """not stupid"""
 import json
 import random
@@ -7,12 +6,12 @@ from typing import List, Dict, Any
 import praw
 from slack_python_logging import slack_logger
 
-from response import Response
+from .response import Response
 
 class Goolsbot(object):
     """goolsbot class"""
 
-    def __init__(self: Goolsbot, reddit: praw.Reddit, subreddits: List[str]) -> None:
+    def __init__(self, reddit: praw.Reddit, subreddits: List[str]) -> None:
         self.logger = slack_logger.initialize("goolsbee-bot")
         self.logger.debug("Intializing")
 
@@ -44,7 +43,7 @@ class Goolsbot(object):
 
     import string
     punc_remover = str.maketrans('', '', string.punctuation)
-    def run(self: Goolsbot) -> None:
+    def run(self) -> None:
         """run the main code"""
         for subreddit in self.subreddits:
             for comment in subreddit.stream.comments():
@@ -64,7 +63,7 @@ class Goolsbot(object):
                                 random.choice(self.responses), comment
                             )
 
-    def write_comment(self: Goolsbot, response: Response, comment: praw.models.Comment) -> None:
+    def write_comment(self, response: Response, comment: praw.models.Comment) -> None:
         """log comment and writes to file"""
         with open('replied_comments.txt', 'a') as file:
             file.write(str(comment))
@@ -80,8 +79,3 @@ class Goolsbot(object):
                 self.logger.debug("Comment posted")
         else:
             self.logger.debug("Comment unlucky, not posted")
-
-if __name__ == '__main__':
-    bot: Goolsbot = Goolsbot(praw.Reddit("Goolsbee"), ["neoliberal"])
-    while True:
-        bot.run()
