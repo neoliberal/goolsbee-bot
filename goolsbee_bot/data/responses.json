@@ -1,36 +1,36 @@
 [
     {
-        "triggers": [],
+        "triggers": ["not", "even", "funny"],
         "image": "https://i.imgur.com/6SJd1HO.png",
         "text": "not even funny anymore."
     },
     {
-        "triggers": [],
+        "triggers": ["please"],
         "image": "https://i.imgur.com/tkP5KFO.png",
         "text": "oh, please."
     },
     {
-        "triggers": [],
+        "triggers": ["stupid"],
         "image": "https://i.imgur.com/VbuE1QE.png",
         "text": "stupid."
     },
     {
-        "triggers": [],
+        "triggers": ["donald", "trump", "bad"],
         "image": "https://i.imgur.com/Rq8tmWb.png",
         "text": "duh."
     },
     {
-        "triggers": [],
+        "triggers": ["protectionism", "good"],
         "image": "https://i.imgur.com/grO3STC.png",
         "text": "protectionism doesn't work."
     },
     {
-        "triggers": [],
+        "triggers": ["tax", "cuts", "good"],
         "image": "https://i.imgur.com/RHu3e7W.png",
         "text": "must we relearn the same lesson in the same painful way again?"
     },
     {
-        "triggers": [],
+        "triggers": ["stemlord"],
         "image": "https://i.imgur.com/GRZNl9D.png",
         "text": "don't be an econo/supervillian."
     },
@@ -60,7 +60,7 @@
         "text": "obvious."
     },
     {
-        "triggers": [],
+        "triggers": ["why"],
         "image": "https://i.imgur.com/CmjXFBa.png",
         "text": "no one knows."
     },

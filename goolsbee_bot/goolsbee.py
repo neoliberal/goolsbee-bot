@@ -70,7 +70,7 @@ class Goolsbot(object):
             file.write(str(comment))
             file.write(' ')
 
-        if random.randint(1, 21) == 1:
+        if not random.randint(0, 10):
             self.logger.debug("Comment lucky, posting")
             try:
                 comment.reply(str(response))
@@ -79,7 +79,7 @@ class Goolsbot(object):
             else:
                 self.logger.debug("Comment posted")
         else:
-            self.logger.debug("Comment not posted, unlucky")
+            self.logger.debug("Comment unlucky, not posted")
 
 if __name__ == '__main__':
     bot: Goolsbot = Goolsbot(praw.Reddit("Goolsbee"), ["neoliberal"])
