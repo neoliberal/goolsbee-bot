@@ -1,137 +1,218 @@
 [
     {
         "triggers": ["not", "even", "funny"],
-        "image": "https://i.imgur.com/6SJd1HO.png",
-        "text": "not even funny anymore."
+        "table": {
+            "vote": -2,
+            "confidence": 10,
+            "comment": "not even funny anymore."
+        }
     },
     {
         "triggers": ["please"],
-        "image": "https://i.imgur.com/tkP5KFO.png",
-        "text": "oh, please."
+        "table": {
+            "vote": -2,
+            "confidence": 10,
+            "comment": "oh, please."
+        }
     },
     {
         "triggers": ["stupid"],
-        "image": "https://i.imgur.com/VbuE1QE.png",
-        "text": "stupid."
+        "table": {
+            "vote": -2,
+            "confidence": 10,
+            "comment": "stupid."
+        }
     },
     {
         "triggers": ["donald", "trump", "bad"],
-        "image": "https://i.imgur.com/Rq8tmWb.png",
-        "text": "duh."
+        "table": {
+            "vote": 2,
+            "confidence": 10,
+            "comment": "Duh"
+        }
     },
     {
         "triggers": ["protectionism", "good"],
-        "image": "https://i.imgur.com/grO3STC.png",
-        "text": "protectionism doesn't work."
+        "table": {
+            "vote": -1,
+            "confidence": 3,
+            "comment": "protectionism doesn't work."
+        }
     },
     {
         "triggers": ["tax", "cuts", "good"],
-        "image": "https://i.imgur.com/RHu3e7W.png",
-        "text": "must we relearn the same lesson in the same painful way again?"
+        "table": {
+            "vote": 2,
+            "confidence": 10,
+            "comment": "must we relearn the same lesson in the same painful way again?"
+        }
     },
     {
         "triggers": ["stemlord"],
-        "image": "https://i.imgur.com/GRZNl9D.png",
-        "text": "don't be an econo/supervillian."
+        "table": {
+            "vote": 1,
+            "confidence": 1,
+            "comment": "don't be an econo/supervillian."
+        }
     },
     {
         "triggers": [],
-        "image": "https://i.imgur.com/LnKT9GY.png",
-        "text": "no way."
+        "table": {
+            "vote": -2,
+            "confidence": 10,
+            "comment": "no way"
+        }
     },
     {
         "triggers": [],
-        "image": "https://i.imgur.com/dqMQanm.png",
-        "text": "lather. rinse. repeat."
+        "table": {
+            "vote": -1,
+            "confidence": 5,
+            "comment": "Lather. Rinse. Repeat."
+        }
     },
     {
         "triggers": [],
-        "image": "https://i.imgur.com/1JqtyQH.png",
-        "text": "you know this and you know that I know that you know this."
+        "table": {
+            "vote": 1,
+            "confidence": 1,
+            "comment": "you know this and you know that I know that you know this."
+        }
     },
     {
         "triggers": [],
-        "image": "https://i.imgur.com/Z6kQEl1.png",
-        "text": "lots of evidence both ways on this one. not sure."
+        "table": {
+            "vote": 0,
+            "confidence": 10,
+            "comment": "lots of evidence both ways on this one. not sure."
+        }
     },
     {
         "triggers": [],
-        "image": "https://i.imgur.com/5pHX8yy.png",
-        "text": "obvious."
+        "table": {
+            "vote": 2,
+            "confidence": 10,
+            "comment": "obvious"
+        }
     },
     {
         "triggers": ["why"],
-        "image": "https://i.imgur.com/CmjXFBa.png",
-        "text": "no one knows."
+        "table": {
+            "vote": 0,
+            "confidence": 6,
+            "comment": "no one knows"
+        }
     },
     {
         "triggers": [],
-        "image": "https://i.imgur.com/n6IdBQB.png",
-        "text": "waiting for money from tooth fairy wasn't included on the list"
+        "table": {
+            "vote": 1,
+            "confidence": 7,
+            "comment": "waiting for money from tooth fairy' wasn't included on the list"
+        }
     },
     {
         "triggers": [],
-        "image": "https://i.imgur.com/7p8yygg.png",
-        "text": "I know it pisses people off but it is true."
+        "table": {
+            "vote": 1,
+            "confidence": 8,
+            "comment": "I know it pisses people off but it is true."
+        }
     },
     {
         "triggers": [],
-        "image": "https://i.imgur.com/eOnUveX.png",
-        "text": "hahahaha. ROTFL."
+        "table": {
+            "vote": 2,
+            "confidence": 10,
+            "comment": "hahahaha. ROTFL."
+        }
     },
     {
         "triggers": [],
-        "image": "https://i.imgur.com/Pp2olSh.png",
-        "text": "OBVIOUSly."
+        "table": {
+            "vote": 2,
+            "confidence": 10,
+            "comment": "OBVIOUSly"
+        }
     },
     {
         "triggers": [],
-        "image": "https://i.imgur.com/ZYOvlVO.png",
-        "text": "yes."
+        "table": {
+            "vote": 2,
+            "confidence": 10,
+            "comment": "yes"
+        }
     },
     {
         "triggers": [],
-        "image": "https://i.imgur.com/P5LN5xJ.png",
-        "text": "even that won't work."
+        "table": {
+            "vote": -1,
+            "confidence": 5,
+            "comment": "even that won't work."
+        }
     },
     {
         "triggers": [],
-        "image": "https://i.imgur.com/pE0nPLI.png",
-        "text": "moon landing was real. evolution exists. tax cuts lose revenue."
+        "table": {
+            "vote": -2,
+            "confidence": 10,
+            "comment": "Moon landing was real. Evolution exists. Tax cuts lose revenue. The reasearch has shown this a thousand times. Enough already."
+        }
     },
     {
         "triggers": [],
-        "image": "https://i.imgur.com/RXLjkKp.png",
-        "text": "you've got to be kidding me."
+        "table": {
+            "vote": 2,
+            "confidence": 10,
+            "comment": "you've got to be kidding me."
+        }
     },
     {
         "triggers": [],
-        "image": "https://i.imgur.com/YAbQoBq.png",
-        "text": "eesh. has it come to this?"
+        "table": {
+            "vote": -2,
+            "confidence": 10,
+            "comment": "eesh. has it come to this?"
+        }
     },
     {
         "triggers": [],
-        "image": "https://i.imgur.com/nqJy5uh.png",
-        "text": "not good. not good."
+        "table": {
+            "vote": 1,
+            "confidence": 7,
+            "comment": "not good. not good."
+        }
     },
     {
         "triggers": [],
-        "image": "https://i.imgur.com/9wKIrkc.png",
-        "text": "we have at least 10,000 research papers establishing this one as a fact"
+        "table": {
+            "vote": 2,
+            "confidence": 10,
+            "comment": "We have at least 10,000 research papers establishing this one as a fact"
+        }
     },
     {
         "triggers": [],
-        "image": "https://i.imgur.com/6SJd1HO.png",
-        "text": "Bernie would have won?"
+        "table": {
+            "vote": 0,
+            "confidence": 8,
+            "comment": "did any else notice how slippery this hill we are camping on seems?"
+        }
     },
     {
         "triggers": [],
-        "image": "https://i.imgur.com/VbuE1QE.png",
-        "text": "stupid?"
+        "table": {
+            "vote": -2,
+            "confidence": 10,
+            "comment": "Of course not. Does anyone care about actual evidence anymore?"
+        }
     },
     {
         "triggers": [],
-        "image": "https://i.imgur.com/7LHhUWb.png",
-        "text": "did any else notice how slippery this hill we are camping on seems?"
+        "table": {
+            "vote": -2,
+            "confidence": 10,
+            "comment": "Pistol. Foot. Bang."
+        }
     }
 ]
