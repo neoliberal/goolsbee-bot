@@ -16,7 +16,7 @@
         }
     },
     {
-        "triggers": ["stupid"],
+        "triggers": ["bernie", "sanders"],
         "table": {
             "vote": -2,
             "confidence": 10,
@@ -80,7 +80,7 @@
         }
     },
     {
-        "triggers": [],
+        "triggers": ["dirtbag", "center"],
         "table": {
             "vote": 0,
             "confidence": 10,
@@ -88,7 +88,7 @@
         }
     },
     {
-        "triggers": [],
+        "triggers": ["actually", "zero", "difference", "between", "good", "bad"],
         "table": {
             "vote": 2,
             "confidence": 10,
@@ -108,7 +108,7 @@
         "table": {
             "vote": 1,
             "confidence": 7,
-            "comment": "waiting for money from tooth fairy' wasn't included on the list"
+            "comment": "'waiting for money from tooth fairy' wasn't included on the list"
         }
     },
     {
@@ -120,7 +120,7 @@
         }
     },
     {
-        "triggers": [],
+        "triggers": ["socialism", "good"],
         "table": {
             "vote": 2,
             "confidence": 10,
@@ -152,7 +152,7 @@
         }
     },
     {
-        "triggers": [],
+        "triggers": ["tax", "cuts", "revenue"],
         "table": {
             "vote": -2,
             "confidence": 10,
@@ -160,7 +160,7 @@
         }
     },
     {
-        "triggers": [],
+        "triggers": ["bitcoin"],
         "table": {
             "vote": 2,
             "confidence": 10,
@@ -168,7 +168,7 @@
         }
     },
     {
-        "triggers": [],
+        "triggers": ["twitch"],
         "table": {
             "vote": -2,
             "confidence": 10,
@@ -176,7 +176,7 @@
         }
     },
     {
-        "triggers": [],
+        "triggers": ["85937"],
         "table": {
             "vote": 1,
             "confidence": 7,
@@ -184,7 +184,7 @@
         }
     },
     {
-        "triggers": [],
+        "triggers": ["childmod", "best"],
         "table": {
             "vote": 2,
             "confidence": 10,
@@ -192,7 +192,7 @@
         }
     },
     {
-        "triggers": [],
+        "triggers": ["free", "speech", "hate"],
         "table": {
             "vote": 0,
             "confidence": 8,
@@ -200,7 +200,7 @@
         }
     },
     {
-        "triggers": [],
+        "triggers": ["evidence", "based"],
         "table": {
             "vote": -2,
             "confidence": 10,
@@ -208,7 +208,7 @@
         }
     },
     {
-        "triggers": [],
+        "triggers": ["nationalism", "good"],
         "table": {
             "vote": -2,
             "confidence": 10,

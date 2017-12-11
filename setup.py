@@ -9,7 +9,7 @@ with open("requirements.txt") as file:
 setup(
     name="goolsbee_bot",
     description="Goolsbee Bot",
-    version="0.1.1",
+    version="0.2.0",
     python_requires='>=3',
     install_requires=requirements,
     entry_points={

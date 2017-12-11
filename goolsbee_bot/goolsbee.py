@@ -39,7 +39,7 @@ class Goolsbot(object):
             Response(item["triggers"], item["table"]) for item in res_list
         ]
         self.logger.debug("Opened responses")
-        self.logger.info("goolsbee-bot intialized successfully")
+        self.logger.info("Intialized successfully")
         return
 
     import string
