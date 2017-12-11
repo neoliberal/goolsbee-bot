@@ -1,0 +1,14 @@
+[Unit]
+Description=goolsbee_bot
+After=multi-user.target
+
+[Service]
+Type=simple
+EnvironmentFile=/var/lib/goolsbee_bot/data/variables.env
+ExecStart=goolsbot neoliberal
+User=admin
+WorkingDirectory=/var/lib/goolsbee_bot
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
